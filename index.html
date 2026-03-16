@@ -20,24 +20,35 @@ overflow:hidden;
 }
 
 .box{
-background:rgba(0,0,0,0.4);
-padding:40px;
-border-radius:20px;
-width:80%;
-max-width:600px;
+background:rgba(0,0,0,0.5);
+padding:50px;
+border-radius:25px;
+width:90%;
+max-width:700px;
 z-index:2;
 }
 
 h1{
-font-size:38px;
+font-size:42px;
 }
 
 p{
-font-size:20px;
-line-height:1.6;
+font-size:22px;
+line-height:1.8;
 }
 
-/* heart animation */
+button{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:20px;
+background:red;
+color:white;
+cursor:pointer;
+}
+
+/* hearts */
 
 .heart{
 position:absolute;
@@ -47,14 +58,8 @@ animation:fall 6s linear infinite;
 }
 
 @keyframes fall{
-0%{
-transform:translateY(-10vh);
-opacity:1;
-}
-100%{
-transform:translateY(110vh);
-opacity:0;
-}
+0%{transform:translateY(-10vh);opacity:1;}
+100%{transform:translateY(110vh);opacity:0;}
 }
 
 </style>
@@ -83,9 +88,19 @@ Krishu tera hi hai aur tera hi rahega.
 Main hamesha tere paas hoon. ❤️
 </p>
 
+<button onclick="playMusic()">Play Music 🎵</button>
+
 </div>
 
+<audio id="music" loop>
+<source src="https://pagalworld.com.se/files/download/type/128/id/6417" type="audio/mpeg">
+</audio>
+
 <script>
+
+function playMusic(){
+document.getElementById("music").play();
+}
 
 function createHeart(){
 const heart=document.createElement("div");
@@ -104,12 +119,6 @@ heart.remove();
 setInterval(createHeart,300);
 
 </script>
-
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/fVf5Q4p0R0g?autoplay=1&loop=1&playlist=fVf5Q4p0R0g"
-frameborder="0"
-allow="autoplay">
-</iframe>
 
 </body>
 </html>
